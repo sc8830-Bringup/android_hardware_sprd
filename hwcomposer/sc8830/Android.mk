@@ -65,6 +65,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_C_INCLUDES := \
 	$(TOP)/frameworks/native/libs/nativewindow/include/ \
+	$(LOCAL_PATH)/../../kernel_headers/$(TARGET_BOARD_PLATFORM)/video \
 	$(LOCAL_PATH)/../../gralloc/$(TARGET_BOARD_PLATFORM) \
 	$(LOCAL_PATH)/../../libmemoryheapion/ \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video/ \
@@ -83,6 +84,10 @@ LOCAL_CFLAGS += \
 	-D_USE_SPRD_HWCOMPOSER \
 	-DGL_GLEXT_PROTOTYPES \
 	-DEGL_EGLEXT_PROTOTYPES \
+	-Wno-unused-parameter \
+	-Wno-unused-variable \
+	-Wno-unused-private-field \
+	-Wno-gnu-designator
 
 #DEVICE_OVERLAYPLANE_BORROW_PRIMARYPLANE_BUFFER can make SprdPrimaryPlane
 #share the plane buffer to SprdOverlayPlane,
