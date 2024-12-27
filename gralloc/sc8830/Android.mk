@@ -56,6 +56,7 @@ endif
 
 LOCAL_C_INCLUDES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video/ \
+        $(LOCAL_PATH)/../../kernel_headers/$(TARGET_BOARD_PLATFORM)/video \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/ \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/ \
 
@@ -86,6 +87,13 @@ LOCAL_SRC_FILES := \
 	gralloc_module.cpp \
 	alloc_device.cpp \
 	framebuffer_device.cpp
+
+LOCAL_CFLAGS := \
+	-Wno-null-arithmetic \
+	-Wno-format \
+	-Wno-gnu-designator \
+	-Wno-unused-variable \
+	-Wno-unused-function
 
 include $(BUILD_SHARED_LIBRARY)
 

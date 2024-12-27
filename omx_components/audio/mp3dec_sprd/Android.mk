@@ -25,11 +25,17 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := \
 	frameworks/av/media/libstagefright/include \
 	frameworks/native/include/media/openmax \
-	frameworks/av/include/media/stagefright
+	frameworks/av/include/media/stagefright \
+        frameworks/av/media/libstagefright/foundation/include
+
+#media/libstagefright/foundation/include/media/stagefright/foundation/MediaDefs.h
 
 LOCAL_CFLAGS := \
 	-DOSCL_EXPORT_REF= \
-	-DOSCL_IMPORT_REF=
+	-DOSCL_IMPORT_REF= \
+        -Wno-unused-parameter \
+        -Wno-format \
+        -Wno-reorder
 
 LOCAL_LDFLAGS += \
 	-Wl,--no-warn-shared-textrel

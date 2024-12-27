@@ -20,6 +20,10 @@ include $(CLEAR_VARS)
 LOCAL_CFLAGS := \
 	-D_POSIX_SOURCE \
 	-Wno-multichar \
+        -Wno-unused-value \
+        -Wno-unused-variable \
+        -Wno-format \
+        -Wno-unused-parameter \
 	-g
 
 LOCAL_C_INCLUDES += \

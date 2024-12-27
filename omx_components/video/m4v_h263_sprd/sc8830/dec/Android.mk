@@ -13,14 +13,19 @@ LOCAL_C_INCLUDES := \
 	frameworks/native/include/utils \
 	frameworks/native/include/media/hardware \
 	$(LOCAL_PATH)/../../../../../gralloc/$(TARGET_BOARD_PLATFORM) \
-	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video
+        $(LOCAL_PATH)/../../../../../kernel_headers/$(TARGET_BOARD_PLATFORM)/video \
+	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video \
+	frameworks/av/media/libstagefright/foundation/include
 
 LOCAL_ADDITIONAL_DEPENDENCIES += \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_CFLAGS := \
 	-DOSCL_EXPORT_REF= \
-	-DOSCL_IMPORT_REF=
+	-DOSCL_IMPORT_REF= \
+	-Wno-format \
+	-Wno-switch \
+	-Wno-unused-parameter
 
 LOCAL_ARM_MODE := arm
 

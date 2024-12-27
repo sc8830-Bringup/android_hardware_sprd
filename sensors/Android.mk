@@ -28,7 +28,10 @@ LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_CFLAGS := \
 	-DLOG_TAG=\"SensorWrapper\" \
-	-DBOARD_PLATFORM=\"$(TARGET_BOARD_PLATFORM)\"
+	-DBOARD_PLATFORM=\"$(TARGET_BOARD_PLATFORM)\" \
+        -Wno-unused-parameter \
+        -Wno-unused-variable \
+        -Wno-unused-function
 
 LOCAL_SRC_FILES := \
     sensorswrapper.cpp \

@@ -28,7 +28,22 @@ LOCAL_CFLAGS := \
 	-D_POSIX_SOURCE \
 	-Wno-multichar \
 	-g \
-	-Wno-unused-parameter
+	-Wno-unused-parameter \
+        -Wno-unused-variable \
+        -Wno-format \
+        -Wno-missing-braces \
+        -Wno-incompatible-pointer-types \
+        -Wno-sign-compare \
+        -Wno-deprecated-declarations \
+        -Wno-unused-value \
+        -Wno-gnu-designator \
+        -Wno-pointer-sign \
+        -Wno-macro-redefined \
+        -Wno-missing-field-initializers \
+        -Wno-unused-label \
+        -Wno-logical-op-parentheses \
+        -Wno-implicit-function-declaration \
+        -Wno-unused-function
 
 ifeq ($(BOARD_USES_LINE_CALL), true)
 LOCAL_CFLAGS += -D_VOICE_CALL_VIA_LINEIN

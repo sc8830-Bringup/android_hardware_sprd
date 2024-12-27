@@ -32,6 +32,7 @@
 #include <linux/ion.h>
 #include <ion/ion.h>
 #include <sys/mman.h>
+#include <string.h>
 
 #ifdef ADVERTISE_GRALLOC1
 #include <gralloc1-adapter.h>

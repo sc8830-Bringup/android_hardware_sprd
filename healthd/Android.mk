@@ -25,4 +25,7 @@ LOCAL_C_INCLUDES := \
 	system/core/base/include \
 	bootable/recovery/minui/include
 
+LOCAL_CFLAGS := \
+        -Wno-unused-parameter
+
 include $(BUILD_STATIC_LIBRARY)

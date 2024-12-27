@@ -37,6 +37,9 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := \
 LOCAL_SRC_FILES := \
 	ion.c
 
+LOCAL_CFLAGS := \
+	-Wno-unused-variable
+
 LOCAL_MODULE_TAGS := \
 	optional \
 

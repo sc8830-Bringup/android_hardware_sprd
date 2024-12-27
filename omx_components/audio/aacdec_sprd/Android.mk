@@ -25,14 +25,18 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := \
 	frameworks/av/media/libstagefright/include \
 	frameworks/native/include/media/openmax \
-	frameworks/av/include/media/stagefright
+	frameworks/av/include/media/stagefright \
+        frameworks/av/media/libstagefright/foundation/include
 
 LOCAL_CFLAGS := \
 	-DOSCL_EXPORT_REF= \
 	-DOSCL_IMPORT_REF= \
 	-D_AACARM_ \
 	-D_ARMNINEPLATFORM_ \
-	-DAAC_DEC_LITTLE_ENDIAN
+	-DAAC_DEC_LITTLE_ENDIAN \
+        -Wno-reorder \
+        -Wno-format \
+        -Wno-unused-label
 
 LOCAL_LDFLAGS := \
 	-Wl,--no-warn-shared-textrel

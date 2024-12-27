@@ -26,6 +26,8 @@ LOCAL_SRC_FILES := \
 
 LOCAL_CFLAGS := \
 	$(PV_CFLAGS_MINUS_VISIBILITY) \
+	-Wno-unused-parameter \
+	-Wno-macro-redefined
 
 LOCAL_C_INCLUDES := \
 	frameworks/native/include/media/openmax \
@@ -50,6 +52,6 @@ LOCAL_MODULE := libstagefrighthw
 
 LOCAL_PROPRIETARY_MODULE := true
 
-LOCAL_CFLAGS:= -DLOG_TAG=\"$(TARGET_BOARD_PLATFORM).libstagefright\"
+LOCAL_CFLAGS += -DLOG_TAG=\"$(TARGET_BOARD_PLATFORM).libstagefright\"
 
 include $(BUILD_SHARED_LIBRARY)

@@ -21,6 +21,11 @@ LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libdl
 
+LOCAL_CFLAGS := \
+        -Wno-unused-variable \
+        -Wno-unused-parameter \
+        -Wno-format
+
 LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_PRELINK_MODULE := false

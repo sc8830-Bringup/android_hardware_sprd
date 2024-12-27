@@ -8,6 +8,11 @@ include $(CLEAR_VARS)
 
 #LOCAL_CFLAGS := -DSCX15 -I$(LOCAL_PATH)
 
+LOCAL_CFLAGS := \
+	-Wno-unused-variable \
+	-Wno-pointer-sign \
+	-Wno-sign-compare
+
 ifneq ($(strip $(foreach var, $(SPECIAL_EFUSE_LIST), $(strip $(findstring $(var), $(TARGET_BOARD))))),)
 LOCAL_SRC_FILES:= sprd_efuse_hw.c
 else

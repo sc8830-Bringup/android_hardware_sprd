@@ -11,14 +11,23 @@ LOCAL_C_INCLUDES := \
 	frameworks/native/include/media/hardware \
 	frameworks/native/include \
 	$(LOCAL_PATH)/../../../../../gralloc/$(TARGET_BOARD_PLATFORM) \
-	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video
+        $(LOCAL_PATH)/../../../../../kernel_headers/$(TARGET_BOARD_PLATFORM)/video \
+	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/video \
+	frameworks/av/media/libstagefright/foundation/include
 
 LOCAL_ADDITIONAL_DEPENDENCIES += \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_CFLAGS := \
 	-DOSCL_EXPORT_REF= \
-	-DOSCL_IMPORT_REF=
+	-DOSCL_IMPORT_REF= \
+	-Wno-unused-variable \
+	-Wno-macro-redefined \
+	-Wno-parentheses \
+	-Wno-unused-parameter \
+	-Wno-switch \
+	-Wno-reorder \
+	-Wno-unused-function
 
 LOCAL_LDFLAGS += -Wl,--no-warn-shared-textrel
 

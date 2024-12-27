@@ -21,6 +21,11 @@ include $(CLEAR_VARS)
 LOCAL_CFLAGS := \
 	-D_POSIX_SOURCE \
 	-Wno-multichar \
+        -Wno-missing-braces \
+        -Wno-unused-parameter \
+        -Wno-unused-variable \
+        -Wno-pointer-arith \
+        -Wno-format \
 	-g
 
 ifneq (,$(filter sc8830 scx15,$(TARGET_BOARD_PLATFORM)))
